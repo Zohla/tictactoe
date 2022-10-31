@@ -15,18 +15,17 @@ public class Game {
     public int determineWinner(int[][] board) {
         counter++;
 
-        for (int i = 0; i <= 2; i++) {
-            if ((board[i][0] == board[i][1] && board[i][1] == board[i][2]))
+        for (int i = 0; i < board.length; i++) {
+            if ((board[i][0] == board[i][1] && board[i][1] == board[i][2] && board[i][2] == board[i][3] && board[i][3]==board[i][4]))
                 return board[i][2];
         }
-        for (int j = 0; j <=2 ; j++) {
-            if ((board[0][j] == board[1][j] && board[1][j] == board[2][j]))
+        for (int j = 0; j < board.length ; j++) {
+            if ((board[0][j] == board[1][j] && board[1][j] == board[2][j] && board[2][j] == board[3][j] && board[3][j] == board[4][j]))
                 return board[2][j];
         }
-
-            if ((board[0][0] == board[1][1] && board[1][1] == board[2][2]
-                || board[0][2] == board[1][1] && board[1][1] ==board[2][0])){
-                return board[1][1];
+            if ((board[0][0] == board[1][1] && board[1][1] == board[2][2] && board[2][2] == board[3][3] && board[3][3] == board[4][4]
+                || board[0][4] == board[1][3] && board[1][3] ==board[2][2] && board[3][1] ==board[4][0])){
+                return board[2][2];
             }
 
         /*if (board[0][0] == 1 && board[0][1] ==1 && board[0][2] ==1
@@ -50,7 +49,7 @@ public class Game {
         ) {return 2;
         }*/ /*else*/
 
-        if(counter == 9){
+        if(counter == 25){
             return -1;
         }
         return 0;

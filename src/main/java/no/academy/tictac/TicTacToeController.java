@@ -17,7 +17,7 @@ public class TicTacToeController {
 
     private int clicks = 0;
 
-    public static final int BOARD_SIZE = 3;
+    public static final int BOARD_SIZE = 5;
     public static int[][] board = new int[BOARD_SIZE][BOARD_SIZE];
 
     Game game = new Game();
