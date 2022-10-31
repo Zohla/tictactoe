@@ -1,5 +1,10 @@
 package no.academy.tictac;
 
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Rectangle;
+
+import java.util.Collection;
+
 public class Game {
 
     /**
@@ -7,12 +12,17 @@ public class Game {
      * Return 1 for player 1 (Red)
      * Return 2 for player 2 (Blue)
      * Return -1 if nobody wins (draw)
-     *
-     * @param board a grid reprenting game squares
-     * @return -1, 0, 1 or 2
      */
-    int counter =0;
-    public int determineWinner(int[][] board) {
+    int counter =0;//count turns taken to evaluate draw
+    public int determineWinner(int[][] board, Rectangle target) {
+        String currentPlayer ="";
+        if(target.getFill() == Color.RED){
+            currentPlayer ="red";
+        }
+        Collection coordinates = target.getProperties().values();
+        System.out.println(coordinates.toArray().toString());
+
+
         counter++;
         // check rows
         for (int i = 0; i < board.length; i++) {
