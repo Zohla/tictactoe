@@ -54,7 +54,7 @@ public class TicTacToeController {
         target.setFill(color);
         //record click history?
 
-        int winner = game.determineWinner(board);
+        int winner = game.determineWinner(board,target);
         if (winner == 0)
             return;
 
