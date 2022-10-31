@@ -24,7 +24,7 @@ public class Game {
                     correctCount++;
                 }
             }
-            if (correctCount==5) return value;
+            if (correctCount==5 && value !=0) return value;
         }
         // check columns
         for (int l = 0; l < board.length; l++) {
