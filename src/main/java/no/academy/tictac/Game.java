@@ -29,6 +29,9 @@ public class Game {
         // check columns
         for (int l = 0; l < board.length; l++) {
             int value = board[0][l];
+            if (value == 0){
+                continue;
+            }
             int correctCount = 0;
             for (int j = 0; j < board.length; j++) {
                 if ((board[j][l] == value)){
