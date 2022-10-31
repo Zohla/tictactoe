@@ -1,26 +1,12 @@
 package no.academy.tictac;
-
-import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
-
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collection;
-
 public class Game {
-
-    /**
-     * Return 0 if no winner is determined yet
-     * Return 1 for player 1 (Red)
-     * Return 2 for player 2 (Blue)
-     * Return -1 if nobody wins (draw)
-     */
     int counter = 0;//count turns taken to evaluate draw
-
     public int determineWinner(int[][] board, Rectangle target) {
         counter++;
         //get coordinates from target rectangle
-        Collection coordinates = target.getProperties().values();
+        Collection<Object> coordinates = target.getProperties().values();
         Object[] coorArr = coordinates.toArray();
 
         int coor1 = (int) coorArr[1];
