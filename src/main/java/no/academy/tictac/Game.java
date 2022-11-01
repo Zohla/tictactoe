@@ -32,8 +32,23 @@ public class Game {
         }
         if (correctColCount == board.length) return value;
 
-        //add loop [++][++] for the first diagonal check and [++][--] for the other
-        if ((board[0][0] == board[1][1] && board[1][1] == board[2][2] && board[2][2] == board[3][3] && board[3][3] == board[4][4]
+        //add loop [++][++] for the first diagonal check and [++][--] for the other(check only if target is on the diagonal?)
+        int diaSub = board.length-1;
+        int correctCountLeft =0;
+        int correctCountRight =0;
+        for ( int diaAdd =0;diaAdd< board.length;diaAdd++){
+            if ((board[diaAdd][diaSub] == value)) {
+                correctCountLeft++;
+                diaSub--;
+            }
+            if ((board[diaAdd][diaAdd] == value)) {
+                correctCountRight++;
+            }
+        }
+        if (correctCountLeft ==5 || correctCountRight ==5){
+            return value;
+        }
+        /*if ((board[0][0] == board[1][1] && board[1][1] == board[2][2] && board[2][2] == board[3][3] && board[3][3] == board[4][4]
                 || board[0][4] == board[1][3] && board[1][3] == board[2][2] && board[2][2] == board[3][1] && board[3][1] == board[4][0])) {
             return board[2][2];
         }
