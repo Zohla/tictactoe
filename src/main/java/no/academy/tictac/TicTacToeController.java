@@ -44,7 +44,6 @@ public class TicTacToeController {
                 gridPane.add(square, j, i);
             }
         }
-        //isNewGame = false;
     }
 
     public void onMouseClick(MouseEvent mouseEvent) {
@@ -90,5 +89,4 @@ public class TicTacToeController {
             System.exit(0);
         }
     }
-
 }
