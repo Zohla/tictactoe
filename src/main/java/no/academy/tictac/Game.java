@@ -26,7 +26,7 @@ public class Game {
                 correctRowCount++;
             }
         }
-        if (correctRowCount == board.length) return value;
+        if (correctRowCount == board.length){return value;}
 
         // check column containing target coordinates
         int correctColCount = 0;
@@ -35,7 +35,7 @@ public class Game {
                 correctColCount++;
             }
         }
-        if (correctColCount == board.length) return value;
+        if (correctColCount == board.length){return value;}
 
         //add loop [++][++] for the first diagonal check and [++][--] for the other(check only if target is on the diagonal?)
         int diaSub = board.length-1;
@@ -50,13 +50,13 @@ public class Game {
                 correctCountRight++;
             }
         }
-        if (correctCountLeft ==5 || correctCountRight ==5){
+        if (correctCountLeft == board.length || correctCountRight ==board.length){
             return value;
         }
         /*if ((board[0][0] == board[1][1] && board[1][1] == board[2][2] && board[2][2] == board[3][3] && board[3][3] == board[4][4]
                 || board[0][4] == board[1][3] && board[1][3] == board[2][2] && board[2][2] == board[3][1] && board[3][1] == board[4][0])) {
             return board[2][2];
-        }
+        }*/
         if (counter == board.length * board.length) {
             return -1;
         }
