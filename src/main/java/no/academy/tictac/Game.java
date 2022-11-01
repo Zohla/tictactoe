@@ -16,9 +16,8 @@ public class Game {
 
         int coor1 = (int) coorArr[1];
         int coor2 = (int) coorArr[0];
-        System.out.printf("Target = [%d][%d]\n", coor1, coor2);
-
         int value = board[coor1][coor2]; //set the value to target rectangle
+
         // check row containing target coordinates
         int correctRowCount = 0;
         for (int j = 0; j < board.length; j++) {
