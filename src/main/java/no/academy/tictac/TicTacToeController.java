@@ -58,13 +58,13 @@ public class TicTacToeController {
         }
         Color color = clicks++ % 2 == 0 ? PLAYER_1_COLOR : PLAYER_2_COLOR;
         target.setFill(color);
-        //record click history?
 
-        int winner = game.determineWinner(board,target);
+        int winner = game.determineWinner(board, target);
         if (winner == 0)
             return;
 
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        Alert alertReplay = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("Game over!");
         alert.setHeaderText(null);
         String text = "It's a draw!";
@@ -74,8 +74,21 @@ public class TicTacToeController {
             text = "Player 2 (Blue) wins!";
         }
         alert.setContentText(text);
-        alert.setOnCloseRequest(d -> System.exit(0));
         alert.showAndWait();
+
+        //add functionality to replay game!
+        String replay = "Do you want to play again?";
+        alertReplay.setContentText(replay);
+        Optional<ButtonType> result = alertReplay.showAndWait();
+        if (!result.isPresent()) {
+            // alert is exited, but no button has been pressed.
+            System.exit(0);
+        } else if (result.get() == ButtonType.OK) {
+            initialize();
+
+        } else if (result.get() == ButtonType.CANCEL) {
+            System.exit(0);
+        }
     }
 
 }
