@@ -33,6 +33,7 @@ public class TicTacToeController {
                 Rectangle square = new Rectangle(100, 100, Color.WHITE);
                 int finalI = i;
                 int finalJ = j;
+                board[finalI][finalJ] = 0;
                 square.fillProperty().addListener((observable, oldValue, newValue) -> {
                     if (newValue == PLAYER_1_COLOR) {
                         board[finalI][finalJ] = 1;
@@ -43,6 +44,7 @@ public class TicTacToeController {
                 gridPane.add(square, j, i);
             }
         }
+        //isNewGame = false;
     }
 
     public void onMouseClick(MouseEvent mouseEvent) {
