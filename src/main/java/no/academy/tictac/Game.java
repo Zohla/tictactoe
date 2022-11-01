@@ -3,6 +3,11 @@ import javafx.scene.shape.Rectangle;
 import java.util.Collection;
 public class Game {
     int counter = 0;//count turns taken to evaluate draw
+
+    public void setCounter(int counter) {
+        this.counter = counter;
+    }
+
     public int determineWinner(int[][] board, Rectangle target) {
         counter++;
         //get coordinates from target rectangle
