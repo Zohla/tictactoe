@@ -1,6 +1,7 @@
 package no.academy.tictac;
 import javafx.scene.shape.Rectangle;
 import java.util.Collection;
+
 public class Game {
     int counter = 0;//count turns taken to evaluate draw
 
@@ -52,50 +53,9 @@ public class Game {
         if (correctCountLeft == board.length || correctCountRight ==board.length){
             return value;
         }
-        /*if ((board[0][0] == board[1][1] && board[1][1] == board[2][2] && board[2][2] == board[3][3] && board[3][3] == board[4][4]
-                || board[0][4] == board[1][3] && board[1][3] == board[2][2] && board[2][2] == board[3][1] && board[3][1] == board[4][0])) {
-            return board[2][2];
-        }*/
         if (counter == board.length * board.length) {
             return -1;
         }
         return 0;
     }
 }
-
-
-
-
-        /*String currentPlayer = "";
-        if (target.getFill() == Color.RED) {
-            currentPlayer = "red";
-        } else {
-            currentPlayer = "blue";
-        }
-        System.out.println(currentPlayer);*/
-
-        /*for (int j = 0; j < board.length ; j++) {
-            if ((board[0][j] == board[1][j] && board[1][j] == board[2][j] && board[2][j] == board[3][j] && board[3][j] == board[4][j]))
-                return board[2][j];
-        }*/
-
-  /*if (board[0][0] == 1 && board[0][1] ==1 && board[0][2] ==1
-            || board[1][0] == 1 && board[1][1] ==1 && board[1][2] ==1
-            || board[2][0] == 1 && board[2][1] ==1 && board[2][2] ==1
-            || board[0][1] == 1 && board[1][1] ==1 && board[2][1] ==1
-            || board[1][0] == 1 && board[1][1] ==1 && board[1][2] ==1
-            || board[2][0] == 1 && board[2][1] ==1 && board[2][2] ==1
-            || board[0][0] == 1 && board[1][1] ==1 && board[2][2] ==1
-            || board[0][2] == 1 && board[1][1] ==1 && board[2][0] ==1
-        ){return 1;
-            } else if (board[0][0] == 2 && board[0][1] ==2 && board[0][2] ==2
-                || board[1][0] == 2 && board[1][1] ==2 && board[1][2] ==2
-                || board[2][0] == 2 && board[2][1] ==2 && board[2][2] ==2
-                || board[0][1] == 1 && board[1][1] ==1 && board[2][1] ==1
-                || board[1][0] == 2 && board[1][1] ==2 && board[1][2] ==2
-                || board[2][0] == 2 && board[2][1] ==2 && board[2][2] ==2
-                || board[0][0] == 2 && board[1][1] ==2 && board[2][2] ==2
-                || board[0][2] == 2 && board[1][1] ==2 && board[2][0] ==2
-
-        ) {return 2;
-        }*/ /*else*/
