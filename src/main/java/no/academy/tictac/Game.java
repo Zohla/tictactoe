@@ -21,8 +21,8 @@ public class Game {
 
         // check row containing target coordinates
         int correctRowCount = 0;
-        for (int j = 0; j < board.length; j++) {
-            if ((board[coor1][j] == value)) { //check if values on row have same value
+        for (int j1 = 0; j1 < board.length; j1++) {
+            if ((board[coor1][j1] == value)) { //check if values on row have same value
                 correctRowCount++;
             }
         }
